@@ -1,21 +1,25 @@
 from .Field import Field
+
+
 class Snake:
     x = Field().getWindowLength() // 2
     y = Field().getWindowHeight() // 2
-    def __init__(self, body = [[x, y], [x - 10, y], [x - 20, y]] , speed = 15, color = [255, 255, 255], position = [x, y]):
+
+    def __init__(self, body=[[x, y], [x - 10, y], [x - 20, y]], speed=15, color=[255, 255, 255], position=[x, y]):
         self.speed = speed
         self.color = color
         self.body = body
         self.position = position
+
     def getColor(self):
         return self.color
-    
+
     def getSpeed(self):
         return self.speed
-    
+
     def getBody(self):
         return self.body
-    
+
     def getPosition(self):
         return self.position
 
