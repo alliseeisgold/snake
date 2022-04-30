@@ -9,7 +9,7 @@ class Menu:
     def __init__(self):
         self.screen = pygame.display.set_mode((720, 480))
         self.title = 'Snake Game'
-        self.FONT = "src/font.ttf"
+        self.FONT = "font/font.ttf"
         self.BUTTONS_BACKGROUND = "imgs/Buttons_bg.xcf"
         self.BACKGROUND = "imgs/menu_background.jpg"
         self.MENU_TEXT_FONT_SIZE = 50
