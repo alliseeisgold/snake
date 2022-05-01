@@ -1,7 +1,7 @@
 # [**Snake Game**](https://ru.wikipedia.org/wiki/Snake_(%D0%B8%D0%B3%D1%80%D0%B0))
 
 <p align="center">
-  <img width="460" height="300" src="src/legendary.jpg" сaption="Легендарная игра">
+  <img width="460" height="300" src="imgs/legendary.jpg" сaption="Легендарная игра">
 </p>
 
 

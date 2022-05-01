@@ -2,8 +2,8 @@ from .Field import Field
 
 
 class Snake:
-    x = Field().getWindowLength() // 2
-    y = Field().getWindowHeight() // 2
+    x = Field.lengthX // 2
+    y = Field.heightY // 2
 
     def __init__(self, body=[[x, y], [x - 10, y], [x - 20, y]], speed=15, color=[255, 255, 255], position=[x, y]):
         self.speed = speed
