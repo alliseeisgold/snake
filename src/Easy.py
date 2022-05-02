@@ -5,6 +5,7 @@ import time
 
 from src.Game import Game
 import pygame
+import src.Fruits as fruits
 
 
 class Easy(Game):
