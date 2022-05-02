@@ -1,89 +1,101 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from Point import Point
 from random import randint
-# from Globals import Globals
-from Field import Field
+from .Field import Field
 
 
 class FruitCreator(ABC):
-    '''
+    """
         Abstract factory for pattern
-    '''
+    """
+
     @abstractmethod
     def factory_method(self):
         pass
 
     def create(self, coordinates):
-        '''
-        Creates fruit on coordinates
-        '''
+        """
+            Creates fruit on coordinates
+        """
         fruit = self.factory_method(coordinates)
         return fruit
 
 
 class AppleCreator(FruitCreator):
-    '''
-    Creator class for Apples
-    '''
+    """
+        Creator class for Apples
+    """
 
     def factory_method(self, coordinates):
         return Apple(coordinates)
 
 
 class PineappleCreator(FruitCreator):
-    '''
-    Creator class for Pineapples
-    '''
+    """
+        Creator class for Pineapples
+    """
 
     def factory_method(self, coordinates):
         return Pineapple(coordinates)
 
 
 class Fruit(ABC):
-    '''
-    Abstract class for fruits
-    '''
+    """
+        Abstract class for fruits
+    """
+
     @abstractmethod
     def __str__(self):
         pass
 
+    @abstractmethod
+    def getCoord(self):
+        pass
 
-class Apple():
-    '''
-    Class for Apples.
-    Apple gives an extra point to Snakes tail.
-    '''
+    @abstractmethod
+    def getColor(self):
+        pass
+
+class Apple:
+    """
+        Class for Apples.
+        Apple gives 10 points.
+    """
 
     def __init__(self, coordinates):
         self.color = "red"
         self.coordinates = coordinates
 
-    def __str__(self):
-        return "Apple"
+    def getColor(self):
+        return self.color
+
+    def getCoords(self):
+        return self.coordinates
 
 
-class Pineapple():
-    '''
+class Pineapple:
+    """
         Class for Pinepples.
         Pineapple clones a Snake. If Snake eats Pineapple, amount of Snakes will increase.
-    '''
+    """
 
     def __init__(self, coordinates):
         self.color = "yellow"
         self.coordinates = coordinates
 
-    def __str__(self):
-        return "Pineapple"
+    def getColor(self):
+        return self.color
+
+    def getCoords(self):
+        return self.coordinates
 
 
 def generate_fruit(fruit):
-    '''
-    Factory method to generate new fruit on random Point
-    '''
-    field = Field()
-    coordinates = Point(randint(0, field.getWindowLength()-1),
-                        randint(0, field.getWindowHeight()-1))
+    """
+        Factory method to generate new fruit on random Point
+    """
+    coordinates = [randint(0, Field.lengthX - 1),
+                   randint(0, Field.heightY - 1)]
     if fruit == "Apple":
         return AppleCreator().create(coordinates)
     elif fruit == "Pineapple":
