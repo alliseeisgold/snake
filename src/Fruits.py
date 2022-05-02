@@ -1,7 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from random import randint
-from .Field import Field
+from src.Field import Field
 
 
 class FruitCreator(ABC):
