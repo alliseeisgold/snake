@@ -39,22 +39,23 @@ class PineappleCreator(FruitCreator):
         return Pineapple(coordinates)
 
 
-class Fruit(ABC):
-    """
-        Abstract class for fruits
-    """
+# class Fruit(ABC):
+#     """
+#         Abstract class for fruits
+#     """
+#
+#     @abstractmethod
+#     def __str__(self):
+#         pass
+#
+#     @abstractmethod
+#     def getCoord(self):
+#         pass
+#
+#     @abstractmethod
+#     def getColor(self):
+#         pass
 
-    @abstractmethod
-    def __str__(self):
-        pass
-
-    @abstractmethod
-    def getCoord(self):
-        pass
-
-    @abstractmethod
-    def getColor(self):
-        pass
 
 class Apple:
     """
